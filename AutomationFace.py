@@ -21,15 +21,15 @@ class AutomationFace:
         path_email.click()
         path_email.send_keys(email)
 
-    try:
-        def user_password(self, pwd: str):
+    def user_password(self, pwd: str):
+        try:
             path_pass = self.driver.find_element_by_xpath('//*[@id="pass"]')
             path_pass.click()
             path_pass.send_keys(pwd)
             path_pass.send_keys(Keys.ENTER)
 
-    except WebDriverException as error:
-        print({'msg': error})
+        except WebDriverException as error:
+            print({'msg': error})
 
 
 if __name__ == '__main__':
